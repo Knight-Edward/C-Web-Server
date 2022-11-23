@@ -199,6 +199,7 @@ int main(void)
 
         // Parent process will block on the accept() call until someone
         // makes a new connection:
+        // So this accept() API is not async.
         newfd = accept(listenfd, (struct sockaddr *)&their_addr, &sin_size);
         if (newfd == -1) {
             perror("accept");
